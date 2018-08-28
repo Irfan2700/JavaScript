@@ -9,12 +9,13 @@ var read = readline.createInterface({
 var a = [];
 
 function twodimention(){
-    read.question("Enter the row elements: ", function(a){
-        read.on('line', line => {
-            a.push(line);
-        });
-        read.question("Enter the column elements: ", function () {
+    read.question("Enter the row elements: ", function(r){
+
             
-        })
-    })
+        read.question("Enter the column elements: ", function (c) {
+            
+            utility.twoD(read,r,c);
+        });
+    });
 }
+twodimention();
