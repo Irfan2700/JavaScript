@@ -238,10 +238,10 @@ module.exports ={
                     for(var k=j+1; k<arr.length; k++){
 
                         if((Number(arr[i])+Number(arr[j])+Number(arr[k]))===0){
-                            if((Number(arr[i])!==Number(arr[j]))!== (Number(arr[k]))){
+                            
                             console.log("the Triplets are : "+arr[i]+" "+arr[j]+" "+arr[k]+" ");
                             
-                         }
+                         var settest = new 
                         }
                     }
                 }
