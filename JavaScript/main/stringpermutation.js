@@ -6,12 +6,12 @@ var read = readline.createInterface({
     output : process.stdout
 });
 
-
 function permutation(){
 
-    read.question("Enter the String : ", function(s){
-
-        utility.permutation(s);
+    read.question("Enter a String : ", (string)=>{
+        var stArray = string.split('');
+        utility.permute(stArray, 0, stArray.length-1);
+        // console.log(stArray.join(''));
         read.close();
     });
 }

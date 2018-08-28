@@ -1,15 +1,25 @@
-const _ = require('lodash');
-var swap = function(s1,i,j){
+/**
+ * @description - This file is intended to serve the standard commenting guide for JAVASCRIPT using ECMAScript 5 (ES5).
+ * Before executing this script we expect some packages & modules are already installed & running on your Linux/Windows Environment.
+ * The soul purpose of this file is to guide how the various syntax are to be explained in a fashion, So as the anonymous reader
+ * of this file will have clear understanding of all the i/o behavioral and logical statements that are implemented.
+ * 
+ * JAVASCRIPT STYLE GUIDE - We have specified `JAVASCRIPT STYLE GUIDE` where ever it is required to follow, just to explain 
+ * how the standards need to be maintained. While doing commenting we expect you to write the comments as and when the code is written.
+ * 
+ * DEPENDENCIES & PACKAGES - Expect the nodejs & npm installed
+ */
 
-        var temp;
-        
-        var charArray = s1.split("");
-        temp = charArray[i] ;
-        charArray[i] = charArray[j];
-        charArray[j] = temp;
-        return  
-       
-}
+/**
+ * JAVASCRIPT STYLE GUIDE - SOURCE FILE HEADER STYLE
+ * NOTE - A SINGLE BLANK LINE SEPARATES THE TWO BLOCKS i.e. BETWEEN HEADER, PACKAGE, 
+ *        REQUIRE STATEMENTS, CLASS DECLARATION, etc
+ */
+
+
+
+const _ = require('lodash');
+
 module.exports ={
    
     hello : function(userinput)
@@ -156,30 +166,15 @@ module.exports ={
         var r2 = (-b-Math.sqrt(d));
 
         console.log("Both Roots of Quadratic equation "+a+"x^2 "+b+"x "+c+" = 0 "+"are : "+Math.round(r1)+" and "+Math.round(r2));
-    }
+    },
 
-}
+ }
 
-    // function permutation(s,l,r){
-        
 
-    //     if(l==r){
-    //         console.log(s);
-    //     }else{
-    //         for(var i=l; i<=r; i++){
-    //             s = swap(s,l,i);
-    //             permutation(s,l+1,r);
-    //             s = swap(s,l,i);
-
-    //         }
-    //     }
-    //     console.log(s);
-
-    // }
 
     module.exports ={
-
-       // permutation: permutation,
+        
+       
     windchill : function(t,v){
 
         
@@ -192,28 +187,7 @@ module.exports ={
         }
     },
 
-    permutation : function(s){
-
-        var str = [];
-
-        if(s.length==0){
-            str.push(s);
-            return str;
-        }
-
-        for (var i=0; i<s.length; i++){
-            var first = s[i];
-            var charleft = s.substring(0,i)+s.substring(i+1);
-            var inner = permutation(charleft);
-            for (var j=0; j<inner.length; j++){
-                str.push(first+inner[j]);
-                console.log(str);
-            }
-            
-        }
-        
-    },
-
+    
     twoD : function(read,r,c){
 
         var limit = r*c;
@@ -297,10 +271,34 @@ module.exports ={
 
         var r = (stopTime - startTime)/1000;
         return r;
-    }
+    },
+    
+     swap : function(stArray, index1, index2) {
+        var temp = stArray[index1];
+        stArray[index1] = stArray[index2];
+        stArray[index2] = temp;
+        return stArray;
+      },
+      
+      permute : function(stArray, startIndex, endIndex) {
+        if (startIndex === endIndex) {
+          console.log(stArray.join(''));
+        // return stArray;
+        } else {
+          var i;
+          for (i = startIndex; i <= endIndex; i++) {
+            this.swap(stArray, startIndex, i);
+            this.permute(stArray, startIndex + 1, endIndex);
+            this.swap(stArray, i, startIndex); // backtrack
+          }
+        }
+
         
-        
-}
+      }
+     
+    
+    }       
+
 
 
 
